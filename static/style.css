@@ -1,0 +1,142 @@
+
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  font-size: 16px;
+  line-height: 1.5;
+  color: #d30101;
+}
+
+body{
+  /* background-color: #242222; */
+  color: rgb(222, 223, 231);
+  font-size: 20px;
+  font-weight: 600;
+}
+
+/* Main content styles */
+
+main {
+  padding: 20px;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+main h2 {
+  margin-bottom: 20px;
+  text-align: center;
+  font-size: 35px;
+  color:rgb(7, 212, 219) ;
+
+}
+
+main h3 {
+  margin-top: 40px;
+  margin-bottom: 20px;
+  color: #0cb8cf;
+}
+
+main p {
+  margin-bottom: 20px;
+}
+
+/* Form styles */
+
+form {
+  display: flex;
+  flex-direction: column;
+}
+
+form label {
+  margin-bottom: 10px;
+  font-weight: bold;
+  color: rgb(7, 212, 219);
+  font-size: 23px;
+}
+
+form input[type="text"],
+form input[type="date"],
+form input[type="file"],
+form input[type="tel"],
+form input[type="submit"] {
+  margin-bottom: 25px;
+  padding: 10px;
+  border-radius: 5px;
+  border: 2px solid #000000;
+  font-size: 15px;
+  background-color: #e5e1e7;
+}
+
+form textarea{
+  margin-bottom: 25px;
+  padding: 10px;
+  border-radius: 5px;
+  border: 2px solid #000000;
+  font-size: 15px;
+  background-color: #e7e1e1;
+  color: rgb(0, 0, 0);
+}
+
+form input[type="submit"] {
+  background-color: #06d63a;
+  color: #000000;
+  font-weight: bolder;
+  font-size: 20px;
+  cursor: pointer;
+}
+
+form input[type="submit"]:hover {
+  background-color: #1c943a;
+  color: #ffffff;
+}
+
+/* CSS */
+.button {
+  appearance: none;
+  background-color: #000000;
+  border: 2px solid #1A1A1A;
+  border-radius: 15px;
+  box-sizing: border-box;
+  color: #FFFFFF;
+  cursor: pointer;
+  display: inline-block;
+  font-family: Roobert,-apple-system,BlinkMacSystemFont,"Segoe UI",Helvetica,Arial,sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol";
+  font-size: 16px;
+  font-weight: 600;
+  line-height: normal;
+  margin: 0;
+  min-height: 60px;
+  min-width: 0;
+  outline: none;
+  padding: 16px 24px;
+  text-align: center;
+  text-decoration: none;
+  transition: all 300ms cubic-bezier(.23, 1, 0.32, 1);
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+  width: 50%;
+  will-change: transform;
+}
+
+.button:disabled {
+  pointer-events: none;
+}
+
+.button:hover {
+  box-shadow: rgba(0, 0, 0, 0.25) 0 8px 15px;
+  transform: translateY(-2px);
+}
+
+.button:active {
+  box-shadow: none;
+  transform: translateY(0);
+}
+
+

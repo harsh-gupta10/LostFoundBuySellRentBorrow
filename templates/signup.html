@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Sign Up Page</title>
+    <link rel="stylesheet" href="signup.css" />
+    <link rel="stylesheet" href="header_footer.css">
+    <script src="https://kit.fontawesome.com/4694dfbf9d.js" crossorigin="anonymous"></script>
+
+  </head>
+  <body>
+    <header>
+      <nav>
+      <ul>
+        <li>
+        <a href="http://localhost:5000/"><img src="{{ url_for('static', filename='logo1.png') }}" alt=""></a></li>
+        
+        <li><a href="http://localhost:5000/lost_items">Lost Items</a></li>
+        <li><a href="http://localhost:5000/found_items">Found Items</a></li>
+        <li><a href="http://localhost:5000/buy_items">Buy Items</a></li>
+        <li><a href="http://localhost:5000/sell_items">Sell Items</a></li>
+        <li><a href="http://localhost:5000/borrow_items">Borrow Items</a></li>
+        <li><a href="http://localhost:5000/about_us">About Us</a></li>
+        <li><a href="http://localhost:5000/search"><i class="fa-solid fa-magnifying-glass" ></i></a></li>
+      </ul>
+    </nav>
+  </header> 
+  <pre>
+  
+          
+  
+  
+  
+  </pre>
+    <div class="signup-container">
+      <h1>Sign Up</h1>
+      <form>
+        <label for="username">Username</label>
+        <input type="text" id="username" name="username" required />
+        <label for="email">Email</label>
+        <input type="email" id="email" name="email" required />
+        <label for="password">Password</label>
+        <input type="password" id="password" name="password" required />
+        <label for="confirm-password">Confirm Password</label>
+        <input
+          type="password"
+          id="confirm-password"
+          name="confirm-password"
+          required
+        />
+        <button type="submit">Sign Up</button>
+      </form>
+      <div class="login-link">
+        Already have an account? <a href="login.html">Login</a>
+      </div>
+    </div>
+    <footer>
+      <p>Made by <a href="mailto:krishna.koushik@students.iiit.ac.in">Krishna Koushik</a> , <a href="mailto:abraham.elenjical@research.iiit.ac.in">Abraham Paul</a> and <a href="mailto:harsh.g@students.iiit.ac.in"> Harsh Gupta</a></p>
+      <p>&copy; 2023 IIIT-H Lost and Found Portal. All rights reserved.</p>
+  </footer>
+  </body>
+</html>

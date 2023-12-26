@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<title>IIIT-H Lost and Found Portal</title>
+	<link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+	<link rel="stylesheet" href="{{ url_for('static', filename='lost_items.css') }}">
+	<link rel="stylesheet" href="{{ url_for('static', filename='header_footer.css') }}">
+	<script src="https://kit.fontawesome.com/4694dfbf9d.js" crossorigin="anonymous"></script>
+	<style>
+		.bold-text {
+			font-weight: bold;
+			color: #ff0000;
+			font-size: 40px;
+			padding: 10px;
+			border-radius: 5px;
+		}
+	</style>
+</head>
+
+<body>
+	<div class="ribbon"></div>
+    <header>
+		<nav>
+			<ul>
+				<li>
+				<a href="http://localhost:5000/"><img src="{{ url_for('static', filename='logo1.png') }}" alt=""></a></li>
+				
+				<li><a href="http://localhost:5000/lost_items">Lost Items</a></li>
+				<li><a href="http://localhost:5000/found_items">Found Items</a></li>
+				<li><a href="http://localhost:5000/buy_items">Buy Items</a></li>
+				<li><a href="http://localhost:5000/sell_items">Sell Items</a></li>
+				<li><a style="color: rgb(8, 231, 56);" href="http://localhost:5000/borrow_items">Borrow Items</a></li>
+				<li><a href="http://localhost:5000/about_us">About Us</a></li>
+				<li><a href="http://localhost:5000/search"><i class="fa-solid fa-magnifying-glass" ></i></a></li>
+			</ul>
+		</nav>
+	</header> 
+	<pre>
+	
+			
+	
+	
+	
+	</pre>
+
+	<body>
+		<h1>Lost Items</h1>
+		<form action="" method="GET" id="sort-form">
+			<label for="sort-select">Sort by:</label>
+			<select id="sort-select" name="sort">
+				<option value="date_asc">Date (Oldest first)</option>
+				<option value="date_desc">Date (Newest first)</option>
+			</select>
+			<input type="submit" value="Sort">
+		</form>
+
+		{% if items %}
+		{% set sorted_items = items %}
+		{% if request.args.get('sort') == 'date_asc' %}
+		{% set sorted_items = items|sort(attribute='4') %}
+		{% elif request.args.get('sort') == 'date_desc' %}
+		{% set sorted_items = items|sort(attribute='4', reverse=True) %}
+		{% endif %}
+
+		{% for item in sorted_items %}
+		<div class="lost-items" id="{{ item[0] }}">
+			<h2>{{ item[1] }}</h2>
+			<img src="data:image/png;base64,{{ item[5] }}">
+			<p>Date: {{ item[4] }}</p>
+			<p>Location: {{ item[3] }}</p>
+			<p>Description: {{ item[2] }}</p>
+			<p>Contact Info: {{ item[7] }}</p>
+			<button class="button" onclick="markBought(this)">Borrow</button>
+			<p class="bold-text" style="display: none;">STATUS:BORROWED</p>
+		</div>
+		{% endfor %}
+		{% else %}
+		<p class="no_lost" >No items found.</p>
+		{% endif %}
+
+		<script>
+			function markBought(button) {
+				const itemDiv = button.parentNode;
+				const boughtText = itemDiv.querySelector('.bold-text');
+				boughtText.style.display = "block";
+				const itemId = itemDiv.getAttribute('id');
+				localStorage.setItem(itemId, 'bought');
+			}
+
+			document.addEventListener("DOMContentLoaded", function () {
+				const itemDivs = document.querySelectorAll('.lost-items');
+				itemDivs.forEach(function (itemDiv) {
+					const itemId = itemDiv.getAttribute('id');
+					const boughtText = itemDiv.querySelector('.bold-text');
+
+					if (localStorage.getItem(itemId) === 'bought') {
+						boughtText.style.display = "block";
+					}
+				});
+			});
+		</script>
+		    <footer>
+				<p>Made by <a href="mailto:krishna.koushik@students.iiit.ac.in">Krishna Koushik</a> , <a href="mailto:abraham.elenjical@research.iiit.ac.in">Abraham Paul</a> and <a href="mailto:harsh.g@students.iiit.ac.in"> Harsh Gupta</a></p>
+				<p>&copy; 2023 IIIT-H Lost and Found Portal. All rights reserved.</p>
+			</footer>
+	</body>
+
+</html>

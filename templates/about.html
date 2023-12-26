@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>About Us</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='header_footer.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='about.css') }}">
+    <script src="https://kit.fontawesome.com/4694dfbf9d.js" crossorigin="anonymous"></script>
+</head>
+
+
+
+<body >
+    <!-- <header>
+        <h1>IIIT-H Lost and Found</h1>
+        <nav>
+            <p>Nav Bar</p>
+        </nav>
+    </header> -->
+    <header>
+        <nav>
+            <ul>
+                <li>
+                <a href="http://localhost:5000/"><img src="{{ url_for('static', filename='logo1.png') }}" alt=""></a></li>
+                
+                <li><a href="http://localhost:5000/lost_items">Lost Items</a></li>
+                <li><a href="http://localhost:5000/found_items">Found Items</a></li>
+                <li><a href="http://localhost:5000/buy_items">Buy Items</a></li>
+                <li><a href="http://localhost:5000/sell_items">Sell Items</a></li>
+                <li><a href="http://localhost:5000/borrow_items">Borrow Items</a></li>
+                <li><a style="color: rgb(8, 231, 56);" href="http://localhost:5000/about_us">About Us</a></li>
+                <li><a href="http://localhost:5000/search"><i class="fa-solid fa-magnifying-glass" ></i></a></li>
+            </ul>
+        </nav>
+    </header> 
+    <pre>
+    
+            
+    
+    
+    
+    </pre>
+
+    <section class="about">
+        <div class="container">
+            <h2>About IIIT-H Lost and Found</h2>
+            <p>Welcome to IIIT-H Lost and Found, a platform designed to connect the IIIT-H community and facilitate the
+                process of finding, buying, or borrowing items within the campus.</p>
+
+            <h3>Motive</h3>
+            <p>At IIIT-H Lost and Found, our mission is to provide a convenient and secure platform for members of the
+                IIIT-H community to post, discover, and acquire lost and found items. We aim to foster a sense of
+                community by enabling individuals to connect with each other and facilitate the exchange of items.</p>
+
+            <h3>How it Works</h3>
+            <ol>
+                <li><strong>Post:</strong> You can quickly establish a listing by including information about the
+                    item if you've lost anything or found something that belongs to someone else. This makes it possible
+                    for other people to locate and recover their misplaced property..</li>
+                <li><strong>Browse and Search:</strong> Look through the product listings that have been posted on our
+                    platform.
+                    To find things that meet your requirements or interests, use the search box or peruse the
+                    categories..</li>
+                <li><strong>Connect and Transact:</strong> Through our secure messaging platform, you can get in touch
+                    with the
+                    owner immediately after discovering an item of interest. Organise a meeting with them and work
+                    together to
+                    finish the deal..</li>
+            </ol>
+
+            <h3>Privacy and Security</h3>
+            <p>We recognise the value of security and privacy. Only the essential information required for communication
+                and
+                transaction reasons will be shared between users, and your personal information will be kept private.
+
+            </p>
+
+            <!-- <h3>Hasn't Joined yet!Sign up Now</h3>
+            <p>Join the IIIT-H Lost & Found community today to begin using our platform to effortlessly locate,
+                purchase,
+                or borrow anything on the IIIT-H campus. Let's work together to make our community more solid and
+                cohesive.</p>
+
+            <a href="#" class="signup-btn">Sign Up Now</a> -->
+            
+        </div>
+    </section>
+
+    <section class="creators">
+        <div class="container">
+            <h3>Creators</h3>
+            
+            <div class="creator-item">
+                <img src="{{ url_for('static', filename='kaushik.jpeg') }}" alt="Krishna Koushik">
+                <h4>Krishna Koushik</h4>
+
+                <a href='mailto:krishna.koushik@students.iiit.ac.in'>
+                    <p>krishna.koushik@students.iiit.ac.in</p>
+                </a>
+            </div>
+            <div class="creator-item">
+                <img src="{{ url_for('static', filename='harsh.jpg') }}" alt="Harsh Gupta">
+                <h4>Harsh Gupta &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp </h4>
+                <a href='mailto:harsh.g@students.iiit.ac.in'>
+                    <p>harsh.g@students.iiit.ac.in</p>
+                </a>
+            </div>
+            <div class="creator-item">
+                <img src="{{ url_for('static', filename='Abrahim.jpeg') }}" alt="Abraham Paul">
+                <h4>Abraham Paul</h4>
+                <a href='mailto:abraham.elenjical@research.iiit.ac.in'>
+                    <p>abraham.elenjical@research.iiit.ac.in</p>
+                </a>
+            </div>
+            
+        </div>
+    </section>
+
+    <footer>
+        <p>Made by <a href="mailto:krishna.koushik@students.iiit.ac.in">Krishna Koushik</a> , <a href="mailto:abraham.elenjical@research.iiit.ac.in">Abraham Paul</a> and <a href="mailto:harsh.g@students.iiit.ac.in"> Harsh Gupta</a></p>
+        <p>&copy; 2023 IIIT-H Lost and Found Portal. All rights reserved.</p>
+    </footer>
+</body>
+
+</html>

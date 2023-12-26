@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>IIIT-H Lost and Found Portal</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='header_footer.css') }}">
+	<script src="https://kit.fontawesome.com/4694dfbf9d.js" crossorigin="anonymous"></script>
+</head>
+<body>
+    <header>
+    <nav>
+		<ul>
+			<li>
+			<a href="http://localhost:5000/"><img src="{{ url_for('static', filename='logo1.png') }}" alt=""></a></li>
+			
+			<li><a href="http://localhost:5000/lost_items">Lost Items</a></li>
+			<li><a href="http://localhost:5000/found_items">Found Items</a></li>
+			<li><a href="http://localhost:5000/buy_items">Buy Items</a></li>
+			<li><a href="http://localhost:5000/sell_items">Sell Items</a></li>
+			<li><a href="http://localhost:5000/borrow_items">Borrow Items</a></li>
+			<li><a href="http://localhost:5000/about_us">About Us</a></li>
+			<li><a href="http://localhost:5000/search"><i class="fa-solid fa-magnifying-glass" ></i></a></li>
+		</ul>
+	</nav>
+</header> 
+<pre>
+
+        
+
+
+
+</pre>
+    <main>
+        <h2>Welcome to the IIIT-H Lost and Found Portal</h2>
+        <p>Use this portal to post information about items you have lost or found on campus. You can also buy, sell or
+            borrow items from other students and faculty members.</p>
+        <h3>Post for a Lost or Found Item </h3>
+
+        <div id="popup"></div>
+
+        <form method="POST" enctype="multipart/form-data">
+			<label for="item-tag">Item Tag:</label>
+			<div>
+			<input type="radio" name="item-tag" value="Lost" required> Lost</div>
+			<div>
+			<input type="radio" name="item-tag" value="Found" required> Found</div>
+			<div>
+			<input type="radio" name="item-tag" value="Buy" required> Buy</div>
+			<div>
+			<input type="radio" name="item-tag" value="Sell" required> Sell</div>
+			<div>
+			<input type="radio" name="item-tag" value="Borrow" required> Borrow</div>
+			<label for="item-type">Item Type:</label>
+			<input type="text" name="item-type" required>
+			<br>
+			<label for="item-description">Item Description:</label>
+			<textarea name="item-description" required></textarea>
+			<br>
+			<label for="item-location">Item Location:</label>
+			<input type="text" name="item-location" required>
+			<br>
+			<label for="item-date">Item Date:</label>
+			<input type="date" name="item-date" required>
+			<br>
+			<label for="item-image">Item Image:</label>
+			<input type="file" name="item-image" accept="image/*" required>
+			<br>
+			<label for="item-contact">Contact Details:</label>
+			<input type="tel" name="item-contact" required>
+			<br>
+			<input type="submit" value="Submit">
+		</form>
+    </main>
+    <footer>
+        <p>Made by <a href="mailto:krishna.koushik@students.iiit.ac.in">Krishna Koushik</a> , <a href="mailto:abraham.elenjical@research.iiit.ac.in">Abraham Paul</a> and <a href="mailto:harsh.g@students.iiit.ac.in"> Harsh Gupta</a></p>
+        <p>&copy; 2023 IIIT-H Lost and Found Portal. All rights reserved.</p>
+    </footer>
+</body>
+<script src="script.js"></script>
+
+</html>

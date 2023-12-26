@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<title>IIIT-H Lost and Found Portal</title>
+	<link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+	<link rel="stylesheet" href="{{ url_for('static', filename='lost_items.css') }}">
+	<link rel="stylesheet" href="{{ url_for('static', filename='header_footer.css') }}">
+	<link rel="stylesheet" href="{{ url_for('static', filename='search.css') }}">
+	<script src="https://kit.fontawesome.com/4694dfbf9d.js" crossorigin="anonymous"></script>
+</head>
+
+<body>
+    <header>
+		<nav>
+			<ul>
+				<li>
+				<a href="http://localhost:5000/"><img src="{{ url_for('static', filename='logo1.png') }}" alt=""></a></li>
+				
+				<li><a href="http://localhost:5000/lost_items">Lost Items</a></li>
+				<li><a href="http://localhost:5000/found_items">Found Items</a></li>
+				<li><a href="http://localhost:5000/buy_items">Buy Items</a></li>
+				<li><a href="http://localhost:5000/sell_items">Sell Items</a></li>
+				<li><a href="http://localhost:5000/borrow_items">Borrow Items</a></li>
+				<li><a href="http://localhost:5000/about_us">About Us</a></li>
+				<li><a style="color: rgb(8, 231, 56);" href="http://localhost:5000/search"><i class="fa-solid fa-magnifying-glass" ></i></a></li>
+			</ul>
+		</nav>
+	</header> 
+	<pre>
+	
+			
+	
+	
+	
+	</pre>
+    {% block content %}
+  <h1>Search Items</h1>
+  <form action="{{ url_for('search') }}" method="GET">
+    <label for="item-type">Item Type:</label>
+    <input type="text" id="item-type" name="search_type">
+    <br><br>
+    <label for="item-description">Item Description:</label>
+    <input type="text" id="item-description" name="search_description">
+    <br><br>
+    <input type="submit" value="Search">
+</form>
+
+  
+  {% if items %}
+			{% set sorted_items = items %}
+			{% if request.args.get('sort') == 'date_asc' %}
+				{% set sorted_items = items|sort(attribute='4') %}
+			{% elif request.args.get('sort') == 'date_desc' %}
+				{% set sorted_items = items|sort(attribute='4', reverse=True) %}
+			{% endif %}
+
+			{% for item in sorted_items %}
+				<div class="lost-items">
+					<h2>{{ item[1] }}</h2>
+					<h3>{{ item[6] }}</h3>
+					<img src="data:image/png;base64,{{ item[5] }}">
+					<p>Date: {{ item[4] }}</p>
+					<p>Location: {{ item[3] }}</p>
+					<p>Description: {{ item[2] }}</p>
+					<p>Contact Info: {{ item[7] }}</p>
+				</div>
+			{% endfor %}
+		{% else %}
+			<p>No items found.</p>
+    {% endif %}
+{% endblock %}
+
+<footer>
+	<p>Made by <a href="mailto:krishna.koushik@students.iiit.ac.in">Krishna Koushik</a> , <a href="mailto:abraham.elenjical@research.iiit.ac.in">Abraham Paul</a> and <a href="mailto:harsh.g@students.iiit.ac.in"> Harsh Gupta</a></p>
+	<p>&copy; 2023 IIIT-H Lost and Found Portal. All rights reserved.</p>
+</footer>
+</body>
+</html>
